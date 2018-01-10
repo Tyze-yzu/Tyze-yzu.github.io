@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function QueryString(name) 
+{
+	var AllVars = window.location.search.substring(1);
+	var Vars = AllVars.split("&");
+	for (i = 0; i < Vars.length; i++)
+	{
+		var Var = Vars[i].split("=");
+		if (Var[0] == name) return Var[1];
+	}
+	return "";
+}
+
+//假設要取值的時候網址為 .. test.htm?UserName=王小明&PhoneNumber=123456
+var getUserName = QueryString("UserName");
+var getPhoneNumber = QueryString("PhoneNumber");
+		var begin = 1;
+		var end = 80;
+		var subject = QueryString("sub");
+		var age = QueryString("age");
+
+		for(var i = begin; i <= end; i++){
+			if(i < 10) document.writeln('<img src="https://portalx.yzu.edu.tw/PortalSocialVB/Include/ShowImage.aspx?ShowType=UserPic&UserAccount=s'+age+''+subject+'0'+i+'&UserPictureName=">');
+			else document.writeln('<img src="https://portalx.yzu.edu.tw/PortalSocialVB/Include/ShowImage.aspx?ShowType=UserPic&UserAccount=s'+age+''+subject+''+i+'&UserPictureName=">');
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
